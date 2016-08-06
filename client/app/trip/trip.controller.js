@@ -7,6 +7,11 @@ class TripController {
   constructor($http, $scope, socket) {
     this.$http = $http;
     this.trips = [];
+    this.newTrip = {
+      destination: "",
+      total_seats: "",
+      starting_location: ""
+    };
 
     $http.get('/api/trips').then(response => {
       this.trips = response.data;
@@ -20,8 +25,13 @@ class TripController {
 
   addTrip() {
     if (this.newTrip) {
-      this.$http.post('/api/trips', { destination: this.newTrip });
-      this.newTrip = '';
+      this.$http.post('/api/trips', this.newTrip);
+      this.trips.push(this.newTrip);
+      this.newTrip = {
+        destination: "",
+        total_seats: "",
+        starting_location: ""
+      };
     }
   }
 

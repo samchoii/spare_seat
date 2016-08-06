@@ -4,19 +4,43 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Trips:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="trip in trip.trips">
-        <li><a href="#">{{trip.destination}}<button type="button" class="close" ng-click="trip.deleteTrip(trip)">&times;</button></a></li>
-      </ul>
+      <table class="table">
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Starting Point</th>
+          <th>Seats Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="trip in trip.trips">
+          <td>{{trip.destination}}</td>
+          <td>{{trip.starting_location}}</td>
+          <td>{{trip.total_seats}}</td>
+        </tr>
+      </tbody>
+    </table>
     </div>
   </div>
 
   <form class="thing-form">
-    <label>Add New Trip</label>
+    <h1 class="page-header">Add New Trip:</h1>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add new trip here" ng-model="trip.newTrip">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="trip.addTrip()">Add New</button>
-      </span>
+      <form>
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <input type="text" class="form-control" id="destination" placeholder="Enter Destination" ng-model="trip.newTrip.destination">
+        </div>
+        <div class="form-group">
+          <label for="startingLocation">Starting Location</label>
+          <input type="text" class="form-control" id="startingLocation" placeholder="Starting Location" ng-model="trip.newTrip.starting_location">
+        </div>
+        <div class="form-group">
+          <label for="totalSeats">Number of Passengers</label>
+          <input type="text" class="form-control" id="totalSeats" placeholder="Seats Available" ng-model="trip.newTrip.total_seats">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="trip.addTrip()">Add Trip</button>
+      </form>
     </p>
   </form>
 </div>
