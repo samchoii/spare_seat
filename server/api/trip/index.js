@@ -10,6 +10,6 @@ router.get('/', auth.isAuthenticated(), controller.index);
 router.delete('/:id', controller.destroy);
 router.put('/:id', auth.isAuthenticated(), controller.update);
 router.get('/:id', auth.isAuthenticated(), controller.show);
-router.post('/', controller.create);
+router.post('/', auth.isAuthenticated(), controller.create);
 
 module.exports = router;

@@ -61,7 +61,6 @@ function removeEntity(res) {
 
 // Gets a list of Things
 exports.index = function(req, res) {
-  console.log("aquiiiI!")
   Trip.findAsync()
     .then(responseWithResult(res))
     .catch(handleError(res));
@@ -77,7 +76,6 @@ exports.show = function(req, res) {
 
 // Creates a new Thing in the DB
 exports.create = function(req, res) {
-  console.log("here");
   Trip.createAsync(req.body)
     .then(responseWithResult(res, 201))
     .catch(handleError(res));
