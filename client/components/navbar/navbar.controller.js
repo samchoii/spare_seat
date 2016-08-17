@@ -13,10 +13,9 @@ class NavbarController {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
-    this.navbarClass = "navbar navbar-fixed-top";
+    this.navbarClass = "navbar navbar-fixed-top navbar-default";
     angular.element($('[ui-view]')).on('scroll', function () {
-      $scope.navbarClass = 'navbar navbar-fixed-top ' + (($('[ui-view]').scrollTop() || 0) > 50 ? 'navbar-custom' : 'navbar-default');
-      // $scope.navbarClass = 'navbar navbar-fixed-top ' + (($('[ui-view]').scrollTop() || 0) > 50 ? 'navbar-custom' : 'navbar-default');
+      $scope.nav.navbarClass = 'navbar navbar-fixed-top ' + (($('[ui-view]').scrollTop() || 0) > 50 ? 'navbar-custom' : 'navbar-default');
       $scope.$apply();
     });
     /*
@@ -36,7 +35,7 @@ class NavbarController {
     });
     */
   }
-  
+
 }
 
 angular.module('spareSeatApp')

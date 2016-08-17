@@ -8,7 +8,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import config from './config/environment';
 import http from 'http';
-import SMTPServer from 'smtp-server';
 
 
 /**
@@ -30,7 +29,7 @@ if (config.seedDB) { require('./config/seed'); }
  * SMTP
  */
 
-// 
+//
 
 
 /**
