@@ -1,27 +1,142 @@
-.thing-form {
-  margin: 20px 0;
+
+
+/**
+ * hero
+ */
+
+.intro {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    background: url(/assets/images/intro-bg.jpg) no-repeat bottom center scroll;
+    background-color: black;
+    background-size: cover;
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+        .brand-heading { font-size: 40px; }
+        .intro-text    { font-size: 18px; }
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+75,000000+100&0+66,1+100 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 66%,rgba(0,0,0,0.26) 75%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+    }
+    @media(min-width:768px) {
+        height: 100%;
+        padding: 0;
+        .intro-body {
+            .brand-heading { font-size: 100px; }
+            .intro-text    { font-size: 26px;  }
+        }
+    }
 }
 
-#banner {
-  border-bottom: none;
-  margin-top: -20px;
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid white;
+    border-radius: 100% !important;
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    &:hover,
+    &:focus {
+        outline: none;
+        color: white;
+        background: fade(white, 10%);
+    }
+    i.animated {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+    &:hover {
+        i.animated {
+            -webkit-animation-name: pulse;
+            -moz-animation-name: pulse;
+            -webkit-animation-duration: 1.5s;
+            -moz-animation-duration: 1.5s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+        }
+    }
 }
 
-#banner h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+
+@keyframes pulse {
+    0%   { transform: scale(1);   }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1);   }
 }
 
-.hero-unit {
-  position: relative;
-  padding: 30px 15px;
-  color: #F5F5F5;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  background: #4393B9;
+
+.content-section {
+  padding-top: 100px;
+  @media(min-width:767px) {
+    padding-top: 250px;
+  }
 }
 
-.navbar-text {
-  margin-left: 15px;
+
+input:placeholder {
+  color: @brand-primary;
 }
+
+
+.input-group-addon {
+  color: @brand-primary;
+  border: 1px solid @brand-primary;
+  background: transparent;
+  border-left: 0px;
+}
+
+
+
+
+
+/**
+ * How It Works
+ */
+
+.how-it-works-section {
+    width: 100%;
+    padding: 20px;
+    color: @brand-primary;
+    text-shadow: 0 1px 1px black;
+    background: none no-repeat center center scroll;
+    background-color: black;
+    background-size: cover;
+}
+    .how-it-works-sign-up-section {
+        .how-it-works-section;
+        background-image: url(/assets/images/signup.jpg);
+    }
+    .how-it-works-post-section {
+        .how-it-works-section;
+        background-image: url(/assets/images/post-a-ride.jpg);
+    }
+    .how-it-works-find-section {
+        .how-it-works-section;
+        background-image: url(/assets/images/find-a-ride.jpg);
+    }
+    .how-it-works-go-section {
+        .how-it-works-section;
+        background-image: url(/assets/images/go.jpg);
+    }
+
+
+
+
+

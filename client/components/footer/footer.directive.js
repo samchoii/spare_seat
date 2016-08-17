@@ -7,6 +7,9 @@ angular.module('spareSeatApp')
       restrict: 'E',
       link: function (scope, element) {
         element.addClass('footer');
+      },
+      controller: function ($scope) {
+        $scope.year = (new Date()).getFullYear();
       }
     };
   });

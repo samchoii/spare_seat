@@ -1,32 +1,88 @@
-<navbar></navbar>
+<navbar page="main"></navbar>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Enjoy the Ride</h1>
-    <p class="lead">Find your next travel companion today!</p>
-    <!-- <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
-  </div>
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">SPARESEAT_</h1>
+                    <p class="intro-text">Find riding companions for wherever you want to go.</p>
+                    <p><a href="" class="btn btn-primary btn-lg">Sign in &nbsp;| &nbsp;Sign up</a></p>
+                    <p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
-<div class="container">
+
+<!-- How It Works Section -->
+<section id="how-it-works" class="content-section text-center">
+    <h2>How It Works</h2>
+    <div class="how-it-works-sign-up-section">
+        <div class="container text-left">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Sign Up with your school email</h3>
+                <p>All users sign up with their school email so your always matched with someone from your school.</p>
+            </div>
+        </div>
+    </div>
+    <div class="how-it-works-post-section">
+        <div class="container text-right">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Post a Ride</h3>
+            <p>Post a ride to meet your friends</p>
+            </div>
+        </div>
+    </div>
+    <div class="how-it-works-find-section">
+        <div class="container text-left">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Find a Ride</h3>
+                <p>Search listings for classmates going to the same destination as you</p>
+            </div>
+        </div>
+    </div>
+    <div class="how-it-works-go-section">
+        <div class="container text-right">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Pickup and go</h3>
+                <p>Negotiate a pickup location and ride cost and go!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Mailing List Section -->
+<section id="mailinglist" class="container content-section text-center">
   <div class="row">
-    <div class="col-lg-12">
-      <!-- <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)">&times;</button></a></li>
-      </ul> -->
+    <div class="col-lg-8 col-lg-offset-2">
+      <h2>Share Rides with your Classmates</h2>
+      <p>Join our mailing list with your school email and we'll let you know when we come to your school</p>
     </div>
   </div>
-
-  <!-- <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="main.newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="main.addThing()">Add New</button>
-      </span>
-    </p>
-  </form> -->
-</div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+      <form class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="mailinglistsignup"></label>
+          <div class="input-group">
+            <input type="text" class="form-control input-lg" id="mailinglistsignup" placeholder="your@schoolemail.edu">
+            <div class="input-group-addon btn btn-primary">
+              <span class="glyphicon glyphicon-arrow-right"></span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
 <footer></footer>

@@ -2,12 +2,34 @@
 @import '../bower_components/bootstrap-social/bootstrap-social.less';
 @import '../bower_components/font-awesome/less/font-awesome.less';
 
+@import '../bower_components/bootstrap/less/variables.less';
+@import '../bower_components/bootstrap/less/mixins.less';
+
 @icon-font-path: '../bower_components/bootstrap/fonts/';
 @fa-font-path: '../bower_components/font-awesome/fonts';
 
 /**
  * App-wide Styles
  */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: black;
+  -webkit-tap-highlight-color: fade(white, 20%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+[ui-view] {
+  height: 100%;
+  overflow-y: scroll;
+}
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -16,6 +38,55 @@
   padding: 0.2em 0;
 }
 
+
+.btn-primary {
+  text-transform: uppercase;
+  font-family: @headings-font-family;
+  transition: all .3s ease-in-out;
+  &:focus,
+  &:hover {
+    background: @brand-primary;
+    color: black;
+    border-color: @brand-primary; 
+  }
+}
+
+
+
+input.form-control {
+  color: @brand-primary;
+  border: 1px solid @brand-primary;
+  border-radius: 0;
+  background: black;
+  &:focus {
+    border: 1px solid @brand-primary;
+  }
+}
+
+p {
+  margin: 0 0 25px;
+  font-size: 18px;
+  line-height: 1.5;
+  @media(min-width:768px) {
+    margin: 0 0 35px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+
+
+::selection {
+  text-shadow: none;
+  background: #fcfcfc;
+  background: fade(white, 20%);
+  &img {
+    background: transparent;
+  }
+}
+
+
+
 // injector
 @import 'admin/admin.less';
 @import 'dashboard/dashboard.less';
@@ -23,5 +94,6 @@
 @import 'trip/trip.less';
 @import '../components/footer/footer.less';
 @import '../components/modal/modal.less';
+@import '../components/navbar/navbar.less';
 @import '../components/oauth-buttons/oauth-buttons.less';
 // endinjector

@@ -8,6 +8,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import config from './config/environment';
 import http from 'http';
+import SMTPServer from 'smtp-server';
+
+
+/**
+ * Database
+ */
 
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -18,6 +24,18 @@ mongoose.connection.on('error', function(err) {
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
+
+
+/**
+ * SMTP
+ */
+
+// 
+
+
+/**
+ * App
+ */
 
 // Setup server
 var app = express();
