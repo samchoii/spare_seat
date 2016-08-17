@@ -1,4 +1,5 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
+<div ng-controller="NavbarController">
+<div ng-class="nav.navbarClass"> <!-- navbar-fixed-top  -->
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
@@ -11,19 +12,18 @@
     </div>
     <div collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
-        <li ng-repeat="item in nav.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li>
-        <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
+        <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="find">Find a Ride</a></li>
+        <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="post">Post a Ride</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li> -->
         <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }}</p> </li>
+        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name.split(' ').shift() }}</p> </li>
         <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
         <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
+        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="asdf">{{ nav.page }}</a></li>
       </ul>
     </div>
   </div>
+</div>
 </div>
