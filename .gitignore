@@ -3,8 +3,9 @@ public
 .tmp
 .idea
 client/bower_components
+!client/bower_components/bootstrap
 dist
 /server/config/local.env.js
 npm-debug.log
-/data
-
+data
+.vscode
